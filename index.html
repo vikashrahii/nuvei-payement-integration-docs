@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Checkout</title>
+    <!-- SafeCharge checkout script -->
+    <script src="https://secure.safecharge.com/checkout/js/checkout.js"></script>
+</head>
+<body>
+    <!-- Container for the SafeCharge checkout UI -->
+    <div class="container_for_checkout" style="width: 100%; height: 400px;"></div>
+
+    <!-- Hidden input for session token -->
+    <input type="hidden" id="session" value="194d2d33-c1e9-4e3f-864f-4a2d387afd47" />
+
+    <script>
+        // Main function to initialize and render the checkout UI
+        function main() {
+            // Make sure the session token is valid and dynamically fetched from the backend
+            var sessionToken = document.getElementById('session').value;
+            
+            // Initialize SafeCharge checkout UI
+            checkout({
+                sessionToken: sessionToken,  // Use dynamic session token
+                renderTo: ".container_for_checkout",  // The container where the UI will be rendered
+                amount: "135",  // Payment amount, you can adjust this value dynamically
+                country: "US",  // Country code for payment
+                currency: "USD",  // Currency type
+                onReady: function(result) {
+                    console.log("Checkout UI is ready:", result);
+                },
+                onResult: function(result) {
+                    // Handle payment result
+                    console.log("Payment Result:", result);
+                    // You can send result data to your backend for further processing
+                }
+            });
+        }
+
+        // Call the main function to initialize checkout UI
+        main();
+    </script>
+</body>
+</html>
