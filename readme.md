@@ -200,6 +200,45 @@ Use Nuvei's **DMN (Direct Merchant Notification)** system or your backend to val
 - Your application already complies with PCI DSS requirements.
 - You want to process payments entirely on the backend.
 
+# Nuvei Server-to-Server SDK Integration
+
+## Overview
+This repository explains the integration of the **Nuvei Server-to-Server SDK** for handling payment operations in large-scale applications, such as gaming platforms. The Server-to-Server SDK provides a robust and secure way to manage payment processes, ensuring better performance, scalability, and security compared to the Nuvei Simply Connect payment method.
+
+## Why Use the Nuvei Server-to-Server SDK?
+The **Server-to-Server SDK** is designed to handle high transaction volumes and complex workflows, making it ideal for large applications like gaming platforms. Here's a comparison between the **Server-to-Server SDK** and the **Simply Connect** payment method:
+
+| Feature            | Server-to-Server SDK                       | Simply Connect                             |
+|---------------------|--------------------------------------------|-------------------------------------------|
+| **Performance**     | High performance, optimized for large-scale apps | Basic, suitable for smaller-scale integrations |
+| **Scalability**     | Easily handles high transaction volumes    | Limited scalability for high-load environments |
+| **Security**        | Secure direct communication with Nuvei servers | Relies on client-side interactions, less secure |
+| **Flexibility**     | Fully customizable API for advanced use cases | Limited flexibility in customization       |
+| **Error Handling**  | Robust error handling and logging mechanisms | Minimal error handling support             |
+
+## Benefits of Server-to-Server SDK for Gaming Platforms
+1. **Scalability for High Traffic**:  
+   Gaming contests like Dream11 experience traffic spikes during contests. The Server-to-Server SDK ensures smooth handling of transactions even under heavy loads.
+
+2. **Advanced Security**:  
+   With direct server-to-server communication, sensitive payment data is not exposed on the client side, reducing risks of data breaches.
+
+3. **Customization**:  
+   Supports custom payment flows, order management, and error handling tailored to your platform’s needs.
+
+4. **Improved Performance**:  
+   Unlike Simply Connect, which may experience latency due to client-server interactions, the SDK ensures faster processing by handling requests directly on the server.
+
+5. **Detailed Logs**:  
+   Provides detailed logs and error handling, essential for monitoring and debugging in a production environment.
+
+## Key Features
+- **Open Order**: Create payment orders directly from your server.
+- **Authorization and Capture**: Manage payment authorization and capture with precision.
+- **Refunds and Voids**: Seamlessly handle refunds and void transactions.
+- **Custom Checksum Calculation**: Securely verify transaction integrity using server-side checksum generation.
+
+
 ---
 
 ## **Testing**
